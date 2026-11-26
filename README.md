@@ -14,6 +14,8 @@
 
 غيّر سطر الـScene بالـprompt الأول لمشهدك إنت، والباقي بيمشي متل ما هو.
 
+بدك Claude يكتبلك الـprompts كلها (الصورة، الستايلات العشرة، والفيديو) لمشهدك إنت؟ في [prompt جاهز لـClaude](#let-claude-write-the-prompts-for-your-own-scene).
+
 الـprompts انكتبت مع Claude. الصور: GPT Image 2. الحركة: MiniMax H3.
 
 ---
@@ -70,6 +72,38 @@ steam rises from the coffee mug. Smooth, clean animation, no new objects, no tex
 ```
 
 If you changed the scene in step 1, describe your scene's one action here instead.
+
+### Let Claude write the prompts for your own scene
+
+These prompts were written with Claude. To get a full set for **your** scene (the master image, the 10 styles and the video prompt), paste this into [Claude](https://claude.ai) and fill in the first line:
+
+```text
+My scene: [who you are, where you are, the ONE action that happens, the ONE bright object that moves].
+
+You write prompts for AI image and video models. I want this scene drawn as one cartoon master image
+from a photo of me, then redrawn in 10 animation styles, then each one animated. Write, each in its
+own plain-text code block:
+
+1. MASTER IMAGE (GPT Image 2 or any image model, my photo attached): vertical 9:16, 1024x1536,
+   polished flat-vector cartoon with a premium explainer-video finish; side view of the person in
+   the attached photo turned into a cartoon that clearly resembles them (hair, beard, glasses or not,
+   clothes); my scene with its one action about to happen and its one bright object; composition:
+   subject in the middle third, a horizontal ground or desk line, a background layer, a darker strip
+   at the bottom; no text, no logos, no watermark.
+2. RESTYLE: one prompt that redraws an attached image keeping exactly the same composition, camera
+   angle, layout, objects and positions, changing only the art style, with a {STYLE} slot, and
+   keeping the person recognisable.
+3. TEN {STYLE} LINES, one each for: Pixel, Chalkboard, Lego, CGI, Comic, Glow, PS2, Minimal, Flat,
+   3D. Each line names the medium, the texture, the palette and one small on-screen detail (a title,
+   a HUD, a caption box) that fits my scene.
+4. VIDEO (image-to-video, 4-5 s, 9:16): static camera; the style stays exactly as the image; my one
+   action plays from start to finish and the bright object moves along a clear path; two small
+   ambient motions (lights, steam, clouds); no new objects, no text changes.
+
+Keep every prompt under 120 words, in English, ready to paste.
+```
+
+Then run steps 1–3 above with what Claude gives you.
 
 ## The 10 styles
 
